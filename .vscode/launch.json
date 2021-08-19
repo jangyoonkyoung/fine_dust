@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-FineDustApplication<fine_dust>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "console": "internalConsole",
+            "mainClass": "com.greenart.FineDustApplication",
+            "projectName": "fine_dust",
+            "args": ""
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.greenart.mapper.AirPollutionMapper">
+    <insert id="insertAirPollutionInfo">
+        INSERT INTO air_pollution_daily
+        (daegu, chungnam, incheon, daejeon, gyeongbuk, sejong, gwangju, jeonbuk, gangwon, ulsan, jeonnam, seoul, busan, jeju, chungbuk, gyeongnam, dataTime, dataGubun, gyeonggi, itemCode)
+        VALUES(#{daegu}, #{chungnam}, #{incheon}, #{daejeon}, #{gyeongbuk}, #{sejong}, #{gwangju}, #{jeonbuk}, #{gangwon}, #{ulsan}, #{jeonnam}, #{seoul}, #{busan}, #{jeju}, #{chungbuk}, #{gyeongnam}, #{dataTime}, #{dataGubun}, #{gyeonggi}, #{itemCode});
+    </insert>
+    <insert id="insertAirPollutionHour">
+        INSERT INTO air_pollution_hour
+        (daegu, chungnam, incheon, daejeon, gyeongbuk, sejong, gwangju, jeonbuk, gangwon, ulsan, jeonnam, seoul, busan, jeju, chungbuk, gyeongnam, dataTime, dataGubun, gyeonggi, itemCode)
+        VALUES(#{daegu}, #{chungnam}, #{incheon}, #{daejeon}, #{gyeongbuk}, #{sejong}, #{gwangju}, #{jeonbuk}, #{gangwon}, #{ulsan}, #{jeonnam}, #{seoul}, #{busan}, #{jeju}, #{chungbuk}, #{gyeongnam}, #{dataTime}, #{dataGubun}, #{gyeonggi}, #{itemCode});
+    </insert>
+
+    <select id="selectAirPollutionHour" resultType="com.greenart.vo.AirPollutionHourVO">
+        select * from air_pollution_hour where dataTime >= str_to_date(#{date}, "%Y-%m-%d")
+    </select>
+</mapper>
